@@ -8,10 +8,10 @@ const routes: Routes = [
     loadChildren:()=> import('./auth/auth.module').then(m=>m.AuthModule)
   },
   {
-    path:'dashboard',
-    loadChildren:()=> import('./protected/protected.module').then(m=>m.ProtectedModule),
-    canLoad : [ValidarTokenGuard],
-    canActivate: [ValidarTokenGuard]
+    path: 'libreria',
+    loadChildren:()=> import('./libreria/libreria.module').then(m=>m.LibreriaModule),
+    canLoad:[ValidarTokenGuard],
+    canActivate:[ValidarTokenGuard]
   },
   {
     path:'**',

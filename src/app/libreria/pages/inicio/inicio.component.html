@@ -1,0 +1,44 @@
+<div class="container sombra">
+    <!-- NavBar -->
+    <div class="row">
+        <app-navbar></app-navbar>
+    </div>
+    <!-- Buscador -->
+    <div class="row bg">
+        <div class="buscador">
+            <h1 class="text-light">Buscar un libro</h1>
+            <app-browser (onDebounce)="sugerencia($event)"></app-browser>
+        </div>
+    </div>
+    
+    <!-- Titulo -->
+    <div class="row bg-dark">
+        <div class="my-3 ">
+            <h5 class="text-center text-white">Libros disponibles</h5>
+        </div>
+    </div>
+    
+    
+    <!-- Resultados de busqueda -->
+    <div class="row">
+        <div class="col my-3" *ngFor="let libro of libros; let i=index">
+            <div class="card text-center">
+                <div class="card-header">
+                Author: {{libro.author}}
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">{{libro.name}}</h5>
+                <p class="card-text">Editorial: {{libro.editorial}}</p>
+                <p class="card-text">Palabras Clave: {{libro.keywords}}</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a [routerLink]="['/libreria/modificar', libro._id]" class="btn btn-primary">Modificar libro</a>
+                    <a (click)="deleteLibro(i , libro._id!)" class="btn btn-primary">Eliminar</a>
+                </div>
+                </div>
+                <div class="card-footer text-muted">
+                Fecha de publicación: {{libro.year}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

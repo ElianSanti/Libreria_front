@@ -1,0 +1,45 @@
+<div class="container sombra">
+    <!-- NavBar -->
+    <div class="row">
+        <app-navbar></app-navbar>
+    </div>
+
+    <div class="row my-3">
+        <h3 class="text-center">Modificar libro</h3>
+    </div>
+    <hr>
+    
+    <div class="row justify-content-center py-5">
+        <div class="col-6">
+            <form autocomplete="off" (submit)="actualizar()">
+                <div class="mb-3">
+                <label for="namebook" class="form-label">Nombre del libro</label>
+                <input type="text" class="form-control" id="namebook" name="name" [(ngModel)]="libro.name">
+                </div>
+                
+                <div class="mb-3">
+                <label for="author" class="form-label">Autor(es)</label>
+                <input type="text" class="form-control" id="author" name="author" [(ngModel)]="libro.author">
+                </div>
+
+                <div class="mb-3">
+                <label for="year" class="form-label">Año</label>
+                <input type="text" class="form-control" id="year" name="year" [(ngModel)]="libro.year">
+                </div>
+
+                <div class="mb-3">
+                <label for="editorial" class="form-label">Editorial</label>
+                <input type="text" class="form-control" id="editorial" name="editorial" [(ngModel)]="libro.editorial">
+                </div>
+                
+                <div class="mb-3">
+                <label for="keywords" class="form-label">Palabras clave</label>
+                <input type="text" class="form-control" id="keywords" name="keywords" [(ngModel)]="libro.keywords">
+                </div>
+                
+                
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
